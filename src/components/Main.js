@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import api from "../utils/api";
-import Cards from "./Cards";
+import Card from "./Card";
 
 function Main(props) {
   const [userName, setUserName] = React.useState("");
   const [userDescription, setUserDescription] = React.useState("");
   const [userAvatar, setUserAvatar] = React.useState("");
-  const [cards, setCards] = React.useState([]);
+  const [card, setCard] = React.useState([]);
 
   React.useEffect(() => {
     api
@@ -16,7 +16,7 @@ function Main(props) {
         setUserName(userData.name);
         setUserDescription(userData.about);
         setUserAvatar(userData.avatar);
-        setCards(cardsData);
+        setCard(cardsData);
         // console.log(userData);
       })
       .catch((err) => {
@@ -30,7 +30,6 @@ function Main(props) {
         <div className="profile__avatar-container">
           <img
             style={{ backgroundImage: `url(${userAvatar})` }}
-            alt=""
             id="avatar"
             className={"profile__avatar-image"}
           />
@@ -45,7 +44,7 @@ function Main(props) {
             {userName}
           </h1>
           <h2 className="profile__info-subtitle" id="about">
-            {userName}
+            {userDescription}
           </h2>
           <button
             onClick={props.onEditProfile}
@@ -60,8 +59,8 @@ function Main(props) {
         ></button>
       </section>
       <section className="elements" id="elements">
-        {cards.map((obj) => (
-          <Cards obj={obj} onCardClick={props.onCardClick} />
+        {card.map((card, id) => (
+          <Card card={card} onCardClick={props.onCardClick} key={id} />
         ))}
       </section>
     </div>
