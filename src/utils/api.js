@@ -44,22 +44,22 @@ export class Api {
     }).then(this._checkResponse);
   }
 
-  deleteCard(data) {
-    return fetch(`${this._url}/cards/${data._id}`, {
+  deleteCard(id) {
+    return fetch(`${this._url}/cards/${id}`, {
       method: "DELETE",
       headers: this._headers,
     }).then(this._checkResponse);
   }
 
-  setLike(data) {
-    return fetch(`${this._url}/cards/${data._id}/likes`, {
+  setLike(id) {
+    return fetch(`${this._url}/cards/likes/${id}`, {
       method: "PUT",
       headers: this._headers,
     }).then(this._checkResponse);
   }
 
-  deleteLike(data) {
-    return fetch(`${this._url}/cards/likes/${data._id}`, {
+  deleteLike(id) {
+    return fetch(`${this._url}/cards/likes/${id}`, {
       method: "DELETE",
       headers: this._headers,
     }).then(this._checkResponse);
@@ -73,6 +73,14 @@ export class Api {
         avatar: data.avatar,
       }),
     }).then(this._checkResponse);
+  }
+
+  changeLikeCardStatus(id, isLiked) {
+    if (!isLiked) {
+      return this.deleteLike(id);
+    } else {
+      return this.setLike(id);
+    }
   }
 
   getInitialData() {
