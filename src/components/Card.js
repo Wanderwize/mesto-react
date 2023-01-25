@@ -1,7 +1,7 @@
 import CurrentUserContext from "../contexts/CurrentUserContext";
 import React from "react";
 
-function Card({ onCardLike, userInfo, card, onCardClick, onCardDelete }) {
+function Card({ onCardLike, card, onCardClick, onCardDelete }) {
   function handleCardClick() {
     onCardClick(card);
   }

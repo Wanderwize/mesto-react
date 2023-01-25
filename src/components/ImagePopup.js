@@ -2,8 +2,9 @@ function ImagePopup({ card, onClose }) {
   return (
     <div>
       <section
-        className={`popup image-popup ${card ? "popup_opened" : ""}`}
+        className={`popup  image-popup ${card ? "popup_opened" : ""}`}
         id="image-popup"
+        style={{backgroundColor: 'rgba(0, 0, 0, 0.9)'}}
       >
         <div className="image-popup__container">
           <button

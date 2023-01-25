@@ -53,7 +53,6 @@ function Main({
         {cards.map((card) => (
           <Card
             onCardLike={onCardLike}
-            userInfo={userInfo}
             card={card}
             onCardClick={onCardClick}
             key={card._id}
