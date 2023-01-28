@@ -1,15 +1,12 @@
-
 .profile__avatar-container {
   position: relative;
   margin: 0;
   border-radius: 50%;
   width: auto;
-
 }
 
-
 .profile__avatar-container::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   top: 0;
