@@ -24,7 +24,7 @@ function PopupWithForm(props, { isOpen, onClose }) {
           >
             <div className="popup__form popup__form-add">{props.children}</div>
             <button
-              className="popup__save-btn /*popup__save-btn_unactive*/ popup__save-button"
+              className="popup__save-btn popup__save-button"
               type="submit"
             >
               Сохранить

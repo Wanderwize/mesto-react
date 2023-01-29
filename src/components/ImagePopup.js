@@ -2,22 +2,22 @@ function ImagePopup({ card, onClose }) {
   return (
     <div>
       <section
-        className={`popup  image-popup ${card ? "popup_opened" : ""}`}
+        className={`popup ${card ? "popup_opened" : ""}`}
         id="image-popup"
-        style={{backgroundColor: 'rgba(0, 0, 0, 0.9)'}}
+        style={{ backgroundColor: "rgba(0, 0, 0, 0.9)" }}
       >
-        <div className="image-popup__container">
+        <div className="popup-image__container">
           <button
             onClick={onClose}
             type="button"
-            className="popup__close image-popup__close"
+            className="popup__close popup-image__close"
           ></button>
           <img
             src={`${card ? card.link : ""}`}
-            className="image-popup__window"
+            className="popup-image__window"
             alt={`${card ? card.name : ""}`}
           />
-          <h2 className="image-popup__subtitle">{`${
+          <h2 className="popup-image__subtitle">{`${
             card ? card.name : ""
           }`}</h2>
         </div>
