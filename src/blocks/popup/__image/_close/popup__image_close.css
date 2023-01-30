@@ -1,8 +1,8 @@
-.popup-image__close {
+.popup__image_close {
   position: absolute;
   right: -40px;
   top: -40px;
-  background-image: url(../../../images/Iconcloseic.svg);
+  background-image: url(../../../../images/Iconcloseic.svg);
   background-repeat: no-repeat;
   background-position: center;
   background-color: rgba(28, 28, 28, 0);
